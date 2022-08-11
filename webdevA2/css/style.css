@@ -8,6 +8,7 @@
 a
 {
     text-decoration: none;
+    color: whitesmoke;
 }
 
 a:visited{
@@ -50,7 +51,26 @@ header
 {
     width: 100vw;
     height: 100vh;
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.mainPage{
     background-image: url(../images/background1.jpg);
+}
+
+.historyPage{
+    background-image: url(../images/background2.jpg);
+}
+
+
+body
+{
+    width: 100vw;
+    height: 100vh;
     background-position: bottom;
     background-size: cover;
     display: flex;
@@ -89,7 +109,7 @@ header
     padding: 8px 15px;
     background: #2eb992;
     border-radius: 15px;
-    color: black;
+    color: rgb(255, 255, 255);
     
 }
 
@@ -98,7 +118,19 @@ header
     top: 30px;
     right: 30px;
     width: 40px;
+    border-radius: 15px;
     cursor: pointer;
+}
+
+.historypages
+{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+
 }
 
 #all
@@ -169,3 +201,36 @@ header
     }
 }
 
+.container{
+    animation: transitionIn 0.75s;
+}
+
+
+
+@keyframes transitionIn{
+    from{
+        opacity: 0;
+        transform: rotateX(-10);
+    }
+
+    to{
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
+
+.container2{
+    animation: dropIn 0.75s;
+}
+
+@keyframes dropIn{
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

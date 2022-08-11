@@ -4,28 +4,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Azarian A2</title>
+    <title>History Page</title>
+
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js" defer></script>
 </head>
-<body>
-    <div>
-        <div id="home">
-			<h1>History of RPG Games</h1>
+<body class="historyPage">
+	<nav class = "navbar">
+		<a href="index.html">
+			<img src="images/nyp.png" alt="NYP Logo" style="width:100px; height: 40px;">
+		</a>
+		<ul class="nav-links">
+			<li class="active"><a href="history.html">History</a></li>
+			<li><a href="info.html">About</a></li>
+			<li><a href="types.html">Sub-Genres</a></li>
+			<li class="ctn"><a href="#">Mini-Game</a></li>
+		</ul>
+		<img src="./images/world_map.jpg" alt="" class="menu-btn">
+	</nav>
+
+	<header>			
+		<div class="container2">
+
 			<div id="buttonArea">
-				<button id="btn_subtopic1" onclick="window.location.href='history.html'">
-					<h5 id="header1">History of RPGs</h5>
+				<button id="menu-btn" onclick="history_prevPage()">
+					<h5 id="header2">Prev Page</h5>
 				</button>
-				<button id="btn_subtopic2" onclick="window.location.href='info.html'">
-					<h5 id="header2">What is an RPG game?</h5>
-				</button>
-				<button id="btn_subtopic3" onclick="window.location.href='types.html'">
-					<h5 id="header3">Types of RPG and sub-genres</h5>
-				</button>
-				<button id="btn_subtopic4" onclick="window.location.href='minigame.html'">
-					<h5 id="header4">Play Minigame!</h5>
-				</button>
+				<button id="menu-btn" onclick="history_nextPage()">
+					<h5 id="header1">Next Page</h5>
+				</button> 	
+			</div>
+
+
+			<div class="header-content">
+				<div class="historypages" id="historypage-1">				
+					<h2>The role-playing video game genre began in the mid-1970s
+						inspired by a pen-and-paper role-playing games that was Dungeons & Dragons.</h2>
+				</div>
+
+				<div class="historypages" id="historypage-2" style="visibility: hidden">;	
+					<h2>Several other sources of inspiration for early role-playing video games 
+						also included fantasy writings by authors such as J. R. R. Tolkien,
+						chess and literature of the Epic of Gilgamesh which inspired the famous
+						'hero's journey'.</h2>>
+				</div>
+
+				<div class="historypages" id="historypage-3" style="visibility: hidden">					
+					<h2>After the success of role-playing video games such as Ultima and Wizardry, 
+						which in turn served as the blueprint for Dragon Quest and Final Fantasy.</h2>>
+				</div>
+
+				<div class="historypages" id="historypage-4" style="visibility: hidden">					
+					<h2> the role-playing genre eventually diverged into two styles, Eastern role-playing 
+						games and Western role-playing games, due to cultural differences</h2>>
+				</div>
+
+				<div class="historypages" id="historypage-5" style="visibility: hidden">					
+					<h2> Broadly speaking, JRPGs have become known more for having pre-defined characters 
+						with set traits and personalities, whereas Western RPGs tend toward customizable
+						 characters.</h2>>
+				</div>
+
+				<div class="line"></div>
 			</div>
 		</div>
-    </div>
+
+	</header>
+
+	<script>
+		const menuBtn = document.querySelector('.menu-btn')
+		const navlinks = document.querySelector('.nav-links')
+
+		menuBtn.addEventListener('click',()=>{
+			navlinks.classList.toggle('mobile-menu');
+		})
+	</script>
 </body>
 </html>
