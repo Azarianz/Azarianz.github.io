@@ -4,31 +4,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+    <title>History Page</title>
 
 	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js" defer></script>
 </head>
-<body>
+<body class="aboutPage">
 	<nav class = "navbar">
 		<a href="index.html">
 			<img src="images/nyp.png" alt="NYP Logo" style="width:100px; height: 40px;">
 		</a>
 		<ul class="nav-links">
-			<li><a href="history.html">History</a></li>
-			<li><a href="info.html">About</a></li>
-			<li><a href="types.html">Sub-Genres</a></li>
+			<li class="active"><a href="history.html">History</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="subgenre.html">Sub-Genres</a></li>
 			<li class="ctn"><a href="#">Mini-Game</a></li>
 		</ul>
 		<img src="./images/world_map.jpg" alt="" class="menu-btn">
 	</nav>
 
-	<header>
-		<div class="header-content">
-			<h2>The world of RPGs</h2>
-			<div class="line"></div>
-			<h1>Role Playing Games</h1>
-			<a href="#" class="ctn">Learn More</a>
+	<header>			
+		<div class="container2">
+
+			<div id="buttonArea">
+				<button id="menu-btn" onclick="about_prevPage()">
+					<h5 id="header2">Prev Page</h5>
+				</button>
+				<button id="menu-btn" onclick="about_nextPage()">
+					<h5 id="header1">Next Page</h5>
+				</button> 	
+			</div>
+
+
+			<div class="header-content">
+				<div class="aboutpages" id="aboutpage-1">				
+					<h2>A role-playing game (RPG) is a genre of video game where the gamer 
+						controls a fictional character (or characters) that undertakes 
+						a quest in an imaginary world.</h2>
+				</div>
+
+				<div class="aboutpages" id="aboutpage-2" style="visibility: hidden">;	
+					<h2> Players control a central game character, or multiple game characters, 
+						usually called a party, and attain victory by completing a series of quests
+						 or reaching the conclusion of a central storyline.</h2>
+				</div>
+
+				<div class="aboutpages" id="aboutpage-3" style="visibility: hidden">					
+					<h2> A key feature of the genre is that characters grow in power and abilities, 
+						and characters are typically designed by the player themselves.</h2>
+				</div>
+				<div class="line"></div>
+			</div>
 		</div>
+
 	</header>
 
 	<script>
