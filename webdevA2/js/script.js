@@ -44,8 +44,7 @@ function about_showpage()
     {
         page1.style.visibility = "hidden";
         page2.style.visibility = "hidden";
-        page3.style.visibility = "visible";
-        
+        page3.style.visibility = "visible";     
     }
 }
 
@@ -119,3 +118,99 @@ function history_showpage()
         page5.style.visibility = "visible";
     }
 }
+
+
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+
+  if(slideIndex == 1)
+  {
+    slideDescription("Subgenre: TRPG (Tactics) \nGame: Fire Emblem Echoes")
+  }
+  else if(slideIndex == 2)
+  {
+    slideDescription("Subgenre: ARPG (Action) \nGame: Final Fantasy 7: Crisis Core")
+  }
+  else if(slideIndex == 3)
+  {
+    slideDescription("Subgenre: MMORPG (Massive Online Multiplayer) \nGame: Final Fantasy 14")
+  }
+  else if(slideIndex == 4)
+  {
+    slideDescription("Subgenre: ARPG (Adventure) \nGame: Fate Grand Order")
+  }
+}
+
+function slideDescription(info)
+{
+    var temp = document.getElementsByClassName("slideinfo");
+
+    for(var i = 0; i < temp.length; i++){
+        temp[i].innerText=info;    // Change the content
+        }
+}
+
+ 
+var enemyIndex = randomNum(3);
+var enemyHP;
+var playerDmg = 1
+
+
+function randomNum(max)
+{
+    return Math.floor(Math.random() * max);
+}
+
+function attackEnemy()
+{
+    enemyHP -= playerDmg;
+
+    if(enemyHP <= 0)
+    {
+        spawnEnemy();
+    }
+}
+
+function spawnEnemy()
+{
+    var rand = randomNum(3);
+    var x = document.getElementsByClassName("enemies");
+
+    for (i = 0; i < x.length; i++) 
+    {
+        if(i != rand)
+        {
+            x[i].style.display = "none";  
+        }
+        else{
+            x[i].style.display = "block";
+        }
+    }
+    
+    enemyHP = 2;
+}
+
