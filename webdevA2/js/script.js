@@ -180,60 +180,61 @@ function randomNum(max)
 }
 
 const menuBtn = document.querySelector('.menu-btn')
-		const navlinks = document.querySelector('.nav-links')
+const navlinks = document.querySelector('.nav-links')
 
-		menuBtn.addEventListener('click',()=>{
-			navlinks.classList.toggle('mobile-menu');
-		})
+menuBtn.addEventListener('click',()=>{
+	navlinks.classList.toggle('mobile-menu');
+})
 
-		function spawnEnemy()
+function spawnEnemy()
+{
+	var rand = Math.floor(Math.random() * 3);
+	var x = document.getElementsByClassName("enemies");
+
+	for (i = 0; i < 3; i++) 
+	{
+		if(i == rand)
 		{
-			var rand = Math.floor(Math.random() * 3);
-			var x = document.getElementsByClassName("enemies");
-
-			for (i = 0; i < 3; i++) 
-			{
-				if(i == rand)
-				{
-					x[i].style.visibility = "visible";  
-				}
-				else
-				{
-					x[i].style.visibility = "hidden";
-				}
-			}
+			x[i].style.visibility = "visible";  
 		}
-
-		function move() 
+		else
 		{
-			var elem = document.getElementById("myBar");   
-			var elem2 = document.getElementById("myBar2");  
-			var elem3 = document.getElementById("myBar3");  
-			var width = 100;
-			var id = setInterval(frame, 10);
-			function frame() 
-			{
-				if (width <= 0) 
-				{
-					clearInterval(id);
-					spawnEnemy();
-					width = 100;
-					elem.style.width = width + '%'; 
-					elem.innerText = width * 1  + '%';
-					elem2.style.width = width + '%'; 
-					elem2.innerText = width * 1  + '%';
-					elem3.style.width = width + '%'; 
-					elem3.innerText = width * 1  + '%';
-				} 
-				else 
-				{
-					width--; 
-					elem.style.width = width + '%'; 
-					elem.innerText = width * 1  + '%';
-					elem2.style.width = width + '%'; 
-					elem2.innerText = width * 1  + '%';
-					elem3.style.width = width + '%'; 
-					elem3.innerText = width * 1  + '%';
-				}
-			}
+			x[i].style.visibility = "hidden";
 		}
+	}
+}
+
+ function move() 
+{
+	var elem = document.getElementById("myBar");   
+	var elem2 = document.getElementById("myBar2");  
+	var elem3 = document.getElementById("myBar3");  
+	var width = 100;
+	var id = setInterval(frame, 10);
+	function frame() 
+    {
+        if (width <= 0) 
+        {
+			
+			clearInterval(id);
+			spawnEnemy();
+			width = 100;
+			elem.style.width = width + '%'; 
+			elem.innerText = width * 1  + '%';
+			elem2.style.width = width + '%'; 
+			elem2.innerText = width * 1  + '%';
+			elem3.style.width = width + '%'; 
+			elem3.innerText = width * 1  + '%';
+		} 
+		else 
+		{
+			width--; 
+			elem.style.width = width + '%'; 
+			elem.innerText = width * 1  + '%';
+			elem2.style.width = width + '%'; 
+			elem2.innerText = width * 1  + '%';
+			elem3.style.width = width + '%'; 
+			elem3.innerText = width * 1  + '%';
+		}		
+	}		
+}
