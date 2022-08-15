@@ -174,43 +174,66 @@ function slideDescription(info)
         }
 }
 
- 
-var enemyIndex = randomNum(3);
-var enemyHP;
-var playerDmg = 1
-
-
 function randomNum(max)
 {
     return Math.floor(Math.random() * max);
 }
 
-function attackEnemy()
-{
-    enemyHP -= playerDmg;
+const menuBtn = document.querySelector('.menu-btn')
+		const navlinks = document.querySelector('.nav-links')
 
-    if(enemyHP <= 0)
-    {
-        spawnEnemy();
-    }
-}
+		menuBtn.addEventListener('click',()=>{
+			navlinks.classList.toggle('mobile-menu');
+		})
 
-function spawnEnemy()
-{
-    var rand = randomNum(3);
-    var x = document.getElementsByClassName("enemies");
+		function spawnEnemy()
+		{
+			var rand = Math.floor(Math.random() * 3);
+			var x = document.getElementsByClassName("enemies");
 
-    for (i = 0; i < x.length; i++) 
-    {
-        if(i != rand)
-        {
-            x[i].style.display = "none";  
-        }
-        else{
-            x[i].style.display = "block";
-        }
-    }
-    
-    enemyHP = 2;
-}
+			for (i = 0; i < 3; i++) 
+			{
+				if(i == rand)
+				{
+					x[i].style.visibility = "visible";  
+				}
+				else
+				{
+					x[i].style.visibility = "hidden";
+				}
+			}
+		}
 
+		function move() 
+		{
+			var elem = document.getElementById("myBar");   
+			var elem2 = document.getElementById("myBar2");  
+			var elem3 = document.getElementById("myBar3");  
+			var width = 100;
+			var id = setInterval(frame, 10);
+			function frame() 
+			{
+				if (width <= 0) 
+				{
+					clearInterval(id);
+					spawnEnemy();
+					width = 100;
+					elem.style.width = width + '%'; 
+					elem.innerText = width * 1  + '%';
+					elem2.style.width = width + '%'; 
+					elem2.innerText = width * 1  + '%';
+					elem3.style.width = width + '%'; 
+					elem3.innerText = width * 1  + '%';
+				} 
+				else 
+				{
+					width--; 
+					elem.style.width = width + '%'; 
+					elem.innerText = width * 1  + '%';
+					elem2.style.width = width + '%'; 
+					elem2.innerText = width * 1  + '%';
+					elem3.style.width = width + '%'; 
+					elem3.innerText = width * 1  + '%';
+				}
+			}
+		}

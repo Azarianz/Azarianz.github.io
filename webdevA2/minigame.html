@@ -8,6 +8,7 @@
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<script src="js/script.js" defer></script>
 </head>
 <body class="minigamePage">
@@ -26,24 +27,36 @@
 
 	<headerhistoryPage>
 		<div class="container">
-            <img class="enemies" src="images/enemy1.png" alt="bull">
-            <img class="enemies" src="images/enemy2.png" alt="skeleton" style="visibility: hidden;">
-            <img class="enemies" src="images/enemy3.jpg" alt="ogre" style="visibility: hidden;">
+			<div class="enemies">							
+				<div class="w3-light-grey">
+					<div id='myBar' class="w3-container w3-red" style="height:24px;width:100%">100%</div>
+				</div>
+				<img src="images/enemy1.png" alt="bull">	
+
+			</div>
+
+			<div class="enemies"  style="visibility: hidden;">							
+				<div class="w3-light-grey">
+				<div id="myBar2" class="w3-container w3-red" style="height:24px;width:100%;">100%</div>
+				</div>
+				<img src="images/enemy2.png" alt="skeleton">
+			</div>
+
+			<div class="enemies" style="visibility: hidden;">							
+				<div class="w3-light-grey">
+				<div id="myBar3" class="w3-container w3-red" style="height:24px;width:100%;">100%</div>
+				</div>
+				<img src="images/enemy3.jpg" alt="ogre" >
+			</div>
+            
 			<div class="header-content">
 				<h2>Attack the Enemies!<br><br></h2>
-				<a href="#" class="ctn" onclick="attackEnemy()">Attack</a>
+				<button class="w3-button w3-green" onclick="move()">Attack</button> 
+			</div>
 			</div>
 		</div>
 
 	</header>
 
-	<script>
-		const menuBtn = document.querySelector('.menu-btn')
-		const navlinks = document.querySelector('.nav-links')
-
-		menuBtn.addEventListener('click',()=>{
-			navlinks.classList.toggle('mobile-menu');
-		})
-	</script>
 </body>
 </html>
